@@ -1,7 +1,5 @@
-node {
-
+node { 'walmartnode') {
 try{ 
-
 slackNotifications('STARTED')
 
 def mavenHome = tool name: 'maven3.8.6'
@@ -78,5 +76,5 @@ def slackNotifications(String buildStatus = 'STARTED') {
   }
 
   // Send notifications
-  slackSend (color: colorCode, message: summary)
+  slackSend (color: colorCode, message: summary, channel: "#walmart")
 }
