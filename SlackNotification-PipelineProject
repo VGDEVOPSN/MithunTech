@@ -1,6 +1,6 @@
 @Library ('sharedlibsdevops')
 
-node {
+node{
 
 try{ 
 
