@@ -1,8 +1,10 @@
+@Library ('sharedlibsdevops')
+
 node {
 
 try{ 
 
-slackNotifications('STARTED')
+sendSlackNotifications('STARTED')
 
 def mavenHome = tool name: 'maven3.8.6'
  
@@ -46,7 +48,7 @@ currentBuild.result='FAILURE'
 throw e
 }// catch closing
 finally{
-slackNotifications(currentBuild.result)
+sendSlackNotifications(currentBuild.result)
 } 
 
 } // node closing
