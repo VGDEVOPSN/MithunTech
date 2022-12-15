@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Software Solutions - GitHub WebHook Demo... <h1>
-<h1 align="center"> Mithun Software Solutions- Very Good Training center, new batch is going to start from the 1st week of the November from 8am to 9.30 am  Support also...Teaching Real Time scnerios</h1>
+<h1 align="center">Welcome to Mithun Software Solutions - GitHub Pool SCM Demo... <h1>
+<h1 align="center"> Mithun Software Solutions- Very Good Training center, new batch is going to start from the 1st week of the January from 8am to 9.30 am  Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
