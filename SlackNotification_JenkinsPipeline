@@ -1,48 +1,14 @@
-echo "The JobName is:${env.JOB_NAME} " 
-    
-	echo "The Node Name is:${env.NODE_NAME}"
-	
-	echo "The Build Number is:${env.BUILD_NUMBER}"
-	
-    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
-    
-    def mavenHome = tool name: 'maven3.8.6'
-	
-	stage('CheckOutCode'){
-		git branch: 'development', credentialsId: '948bdcbd-bd92-47d2-a1a6-2a08f8b2b856', url: 'https://github.com/VGDEVOPSN/MithunTech.git'
-	}
-	
-	stage('Build'){
-		sh "${mavenHome}/bin/mvn package"
-	}
-	/*
-	stage('ExecuteSonarQubeReport'){
-		sh "${mavenHome}/bin/mvn clean sonar:sonar"
-	}
-	
-	stage('UploadArtifactintonexus'){
-		sh "${mavenHome}/bin/mvn clean deploy"
-	}
-	
-	stage('DeployAppIntoTomcatServer'){
-		sshagent(['3362667f-bdc6-4fc5-a295-34ee0cf9d132']) {
-		sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.40.147:/root/apache-tomcat-9.0.70/webapps/"
-		}
-	}
-	*/
-}
-
 node {
 
-try{ 
+   try{ 
 
- def mavenHome = tool name: 'maven3.8.6'
- 
- echo "The JobName is: ${env.JOB_NAME}" 
- echo "The node name is: ${env.NODE_NAME}"
- echo "The build number is: ${env.BUILD_NUMBER}"
- 
-  properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+	 def mavenHome = tool name: 'maven3.8.6'
+
+	 echo "The JobName is: ${env.JOB_NAME}" 
+	 echo "The node name is: ${env.NODE_NAME}"
+	 echo "The build number is: ${env.BUILD_NUMBER}"
+
+  	 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
     
 
   	stage('CheckOutCode'){
