@@ -1,5 +1,5 @@
 //@Library('sharedlibsmss') _
-node(WlamartNode){
+node(WalmartNode){
 
 try{
 
@@ -44,11 +44,10 @@ try{
   }
 } //Node closing
 
-
 //Code Snippet for sending slack notifications.
 
 def slackNotifications(String buildStatus = 'STARTED') {
-  // build status of null means successful
+  //build status of null means successful
   //buildStatus =  buildStatus ?: 'SUCCESS'
   buildStatus = buildStatus ? "SUCCESS":"FAILURE"
 
