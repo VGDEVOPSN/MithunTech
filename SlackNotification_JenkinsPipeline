@@ -4,7 +4,7 @@ node('Walmartnode'){
 try{
 
   //sendSlackNotifications('STARTED')
-  SlackNotifications('STARTED')
+  slackNotifications('STARTED')
   def mavenHome = tool name: 'maven3.8.6'
 
 	 echo "The JobName is: ${env.JOB_NAME}" 
@@ -41,7 +41,8 @@ try{
   throw e
   }//catch closing
   finally{
-  sendSlackNotifications(currentBuild.result)
+  //sendSlackNotifications(currentBuild.result)
+  slackNotifications(currentBuild.result)
   }
 } //Node closing
 
