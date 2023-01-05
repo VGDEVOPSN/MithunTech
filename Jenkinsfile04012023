@@ -1,4 +1,4 @@
-node{
+node(WalmartNode){
     
     echo "The JobName is:${env.JOB_NAME} " 
     
@@ -17,7 +17,7 @@ node{
 	stage('Build'){
 		sh "${mavenHome}/bin/mvn package"
 	}
-	/*
+	
 	stage('ExecuteSonarQubeReport'){
 		sh "${mavenHome}/bin/mvn clean sonar:sonar"
 	}
@@ -31,5 +31,5 @@ node{
 		sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.40.147:/root/apache-tomcat-9.0.70/webapps/"
 		}
 	}
-	*/
+	
 }
