@@ -1,5 +1,5 @@
 //@Library('sharedlibsmss') _
-node(Walmartnode){
+node('Walmartnode'){
 
 try{
 
